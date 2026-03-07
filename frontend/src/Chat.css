@@ -1,0 +1,135 @@
+.chats {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    overflow-y: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    min-height: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+
+.chats::-webkit-scrollbar {
+    width: 6px;
+}
+.chats::-webkit-scrollbar-track {
+    background: transparent;
+}
+.chats::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+}
+.chats::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.message-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    border-bottom: none;
+}
+
+.userDiv {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.gptDiv {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.userMessage {
+    background-color: #2f2f2f;
+    color: #ececec;
+    padding: 12px 18px;
+    border-radius: 18px 18px 4px 18px;
+    font-size: 0.95rem;
+    max-width: 75%;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.gptMessage {
+    color: #ececec;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    max-width: 75%;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 12px 18px;
+    border-radius: 18px 18px 18px 4px;
+    backdrop-filter: blur(10px);
+}
+
+/* Markdown content inside GPT bubble */
+.gptMessage p {
+    margin: 0 0 0.6rem 0;
+}
+.gptMessage p:last-child {
+    margin-bottom: 0;
+}
+.gptMessage ul, .gptMessage ol {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+}
+.gptMessage li {
+    margin-bottom: 0.3rem;
+}
+.gptMessage strong {
+    color: #fff;
+    font-weight: 600;
+}
+.gptMessage h1, .gptMessage h2, .gptMessage h3 {
+    color: #fff;
+    margin: 0.8rem 0 0.4rem;
+    font-weight: 600;
+}
+.gptMessage code {
+    background-color: rgba(0,0,0,0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+}
+.gptMessage pre {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0.6rem 0;
+}
+.gptMessage pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.85rem;
+}
+.gptMessage table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+.gptMessage th, .gptMessage td {
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 8px 12px;
+    text-align: left;
+}
+.gptMessage th {
+    background-color: rgba(255,255,255,0.08);
+}
+
+.newChatHeading {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #ececec;
+    margin: auto;
+    padding-bottom: 2rem;
+}

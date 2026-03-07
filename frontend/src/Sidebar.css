@@ -1,0 +1,136 @@
+.sidebar {
+    background-color: #171717;
+    color: #b4b4b4;
+    height: 100vh;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;   /* ← Changed from overflow-y: auto */
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 14px;
+    background-color: transparent;
+    border: solid 0.5px rgba(255, 255, 255, 0.5);
+    flex-shrink: 0;
+}
+
+.button span {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+.button span:hover {
+    background-color: rgba(180, 180, 180, 0.1);
+}
+
+.button:hover {
+    background-color: rgba(180, 180, 180, 0.05);
+    cursor: default;
+}
+
+.logo {
+    height: 30px;
+    width: 30px;
+    background-color: #ffff;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.history {
+    margin: 10px;
+    padding: 10px;
+    flex: 1;            /* ← Takes all remaining space */
+    min-height: 0;      /* ← Critical for flex scroll to work */
+    overflow-y: auto;   /* ← Only history scrolls */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+
+.history::-webkit-scrollbar {
+    width: 4px;
+}
+.history::-webkit-scrollbar-track {
+    background: transparent;
+}
+.history::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+}
+.history::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.history li {
+    list-style-type: none;
+    cursor: pointer;
+    padding: 2px 5px;
+    margin-bottom: 0.3rem;
+    font-size: 14px;
+    border: solid 2px transparent;
+}
+
+.history li:hover {
+    background-color: rgba(180, 180, 180, 0.05);
+    border: solid 2px transparent;
+    border-radius: 8px;
+}
+
+.history li.active {
+    background-color: rgba(180, 180, 180, 0.1);
+    border-radius: 8px;
+}
+
+.sign {
+    margin: 10px;
+    padding: 13px;
+    font-size: 14px;
+    text-align: center;
+    border-top: solid 0.25px rgba(255, 255, 255, 0.5);
+    flex-shrink: 0;     /* ← Prevent sign from shrinking */
+}
+
+.history li {
+    list-style-type: none;
+    cursor: pointer;
+    padding: 2px 5px;
+    margin-bottom: 0.3rem;
+    font-size: 14px;
+    border: solid 2px transparent;
+    display: flex;                  /* ← Add this */
+    justify-content: space-between; /* ← Add this */
+    align-items: center;            /* ← Add this */
+}
+
+.threadTitle {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.deleteBtn {
+    opacity: 0;                /* ← Hidden by default */
+    padding: 4px 6px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #ff4444;
+    transition: opacity 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+
+.history li:hover .deleteBtn {
+    opacity: 1;                /* ← Show on hover */
+}
+
+.deleteBtn:hover {
+    color: #b4b4b4;
+    background-color: rgba(255, 68, 68, 0.1);
+}
