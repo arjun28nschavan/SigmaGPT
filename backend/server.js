@@ -12,7 +12,9 @@ const app = express();
 const PORT = 8080;
 
 app.use(express.json()); //middleware to parse our incoming requests
-app.use(cors()); //middleware to parse our backend requests
+app.use(cors({
+    origin: "https://sigma-gpt-indol.vercel.app"
+})); //middleware to parse our backend requests
 
 app.use("/api", chatRoutes);
 
